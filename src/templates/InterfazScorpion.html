@@ -1,11 +1,12 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scorpion</title>
-    <link rel="stylesheet" href="css/styleS.css">
-    <link rel="stylesheet" href="css/Normalize.css">
+    <link rel="stylesheet" href="{% static 'css/styleS.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Normalize.css' %}">
     
 </head>
 <body>
@@ -14,10 +15,10 @@
             <div class="nolata"><!-- Aqui va todo  -->
                 <div class="contenedorImgTb">
                     <div class="imagen">
-                        <img class="logo" src="Img/lia.png">
-                        <img class="logo" src="Img/upte.png">
-                        <img class="logo" src="Img/upt.png">
-                        <img class="logo" src="Img/Scorpion.png">
+                        <img class="logo" src="{% static 'Img/lia.png'%}">
+                        <img class="logo" src="{% static 'Img/upte.png' %}">
+                        <img class="logo" src="{% static 'Img/upt.png' %}">
+                        <img class="logo" src="{% static "Img/Scorpion.png" %}">
                     </div>
                     <div class="tabla">
                         <div class="tabla_tit">
