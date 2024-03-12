@@ -30,3 +30,9 @@ async def main():
 
 df = pd.read_csv('data_Sat.csv')
 print(df)
+plt.bar(df['Tiempo'], df['Altitud'])
+plt.xlabel('Tiempo')
+plt.ylabel('Altitud')
+plt.title('Altitud con respecto al Tiempo')
+plt.grid(True)
+plt.show()
