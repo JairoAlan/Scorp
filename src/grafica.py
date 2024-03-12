@@ -3,6 +3,7 @@ import numpy as np
 import  pandas as pd
 import serial_asyncio
 import asyncio
+import csv
 
 lora_band = "915000000"
 lora_networkid = "6"
@@ -25,4 +26,7 @@ async def main():
         if data:
             print(data.decode())
 
-asyncio.run(main())
+# asyncio.run(main())
+
+df = pd.read_csv('data_Sat.csv')
+print(df)
