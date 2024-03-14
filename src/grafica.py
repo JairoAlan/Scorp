@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import  pandas as pd
 import serial_asyncio
+from matplotlib.animation import FuncAnimation
 import asyncio
 import csv
 
@@ -31,65 +32,62 @@ async def main():
 df = pd.read_csv('data_Sat.csv')
 print(df)
 
-# Grafica altitud
-def al_ti():
+def ani_al_ti(i):
+    plt.cla()
     df = pd.read_csv('data_Sat.csv')
-    plt.figure()
-    plt.plot(df['Tiempo'], df['Altitud'])
+    x = df['Tiempo']
+    y = df['Altitud']
+    plt.plot(x[:i+1], y[:i+1])  
     plt.xlabel('Tiempo')
     plt.ylabel('Altitud')
     plt.title('Altitud con respecto al Tiempo')
-    plt.grid(True)
-    plt.savefig('static/Img/grafica_altitud.png',dpi=40)
-    return plt.gcf()
-
-# Grafica presion
-def pr_ti():
+    
+def ani_pr_ti(i):
+    plt.cla()
     df = pd.read_csv('data_Sat.csv')
-    plt.figure()
-    plt.plot(df['Tiempo'],df['Presion'])
+    x = df['Tiempo']
+    y = df['Presion']
+    plt.plot(x[:i+1], y[:i+1])
     plt.xlabel('Tiempo')
     plt.ylabel('Presion')
     plt.title('Presion con respecto al Tiempo')
-    plt.grid(True)
-    plt.savefig('static/Img/grafica_presion.png',dpi=40)
-    return plt.gcf()
-
-# Grafica temperatura
-def te_ti():
+    
+def ani_te_ti(i):
+    plt.cla()
     df = pd.read_csv('data_Sat.csv')
-    plt.figure()
-    plt.plot(df['Tiempo'], df['Temperatura'])
+    x = df['Tiempo']
+    y = df['Temperatura']
+    plt.plot(x[:i+1], y[:i+1])
     plt.xlabel('Tiempo')
     plt.ylabel('Temperatura')
     plt.title('Temperatura con respecto al Tiempo')
-    plt.grid(True)
-    plt.savefig('static/Img/grafica_temperatura.png',dpi=40)
-    return plt.gcf()
 
-# Grafica velocidad
-def ve_ti():
+def ani_ve_ti(i):
+    plt.cla()
     df = pd.read_csv('data_Sat.csv')
-    plt.figure()
-    plt.plot(df['Tiempo'], df['Velocidad'])
+    x = df['Tiempo']
+    y = df['Velocidad']
+    plt.plot(x[:i+1], y[:i+1])
     plt.xlabel('Tiempo')
     plt.ylabel('Velocidad')
     plt.title('Velocidad con respecto al Tiempo')
-    plt.grid(True)
-    plt.savefig('static/Img/grafica_velocidad.png',dpi=40)
-    return plt.gcf()
 
-# Grafica aceleracion
-def ac_ti():
+def ani_ac_ti(i):
+    plt.cla()
     df = pd.read_csv('data_Sat.csv')
-    plt.figure()
-    plt.plot(df['Tiempo'], df['Aceleracion'])
+    x = df['Tiempo']
+    y = df['Aceleracion']
+    plt.plot(x[:i+1], y[:i+1])
     plt.xlabel('Tiempo')
     plt.ylabel('Aceleracion')
     plt.title('Aceleracion con respecto al Tiempo')
-    plt.grid(True)
-    plt.savefig('static/Img/grafica_aceleracion.png',dpi=40)
-    return plt.gcf()
+    
 
+    
+aniAlTi = FuncAnimation(plt.gcf(), ani_al_ti, frames=len(df), interval=1000, repeat=False)
+aniPrTi = FuncAnimation(plt.gcf(), ani_pr_ti, frames=len(df), interval=1000, repeat=False)
+aniTeTi = FuncAnimation(plt.gcf(), ani_te_ti, frames=len(df), interval=1000, repeat=False)
+aniVeTi = FuncAnimation(plt.gcf(), ani_ve_ti, frames=len(df), interval=1000, repeat=False)
+aniAcTi = FuncAnimation(plt.gcf(), ani_ac_ti, frames=len(df), interval=1000, repeat=False)
 
 
