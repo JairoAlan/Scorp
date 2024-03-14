@@ -85,9 +85,10 @@ def ani_ac_ti(i):
 
     
 aniAlTi = FuncAnimation(plt.gcf(), ani_al_ti, frames=len(df), interval=1000, repeat=False)
-aniPrTi = FuncAnimation(plt.gcf(), ani_pr_ti, frames=len(df), interval=1000, repeat=False)
-aniTeTi = FuncAnimation(plt.gcf(), ani_te_ti, frames=len(df), interval=1000, repeat=False)
-aniVeTi = FuncAnimation(plt.gcf(), ani_ve_ti, frames=len(df), interval=1000, repeat=False)
-aniAcTi = FuncAnimation(plt.gcf(), ani_ac_ti, frames=len(df), interval=1000, repeat=False)
+# aniPrTi = FuncAnimation(plt.gcf(), ani_pr_ti, frames=len(df), interval=1000, repeat=False)
+# aniTeTi = FuncAnimation(plt.gcf(), ani_te_ti, frames=len(df), interval=1000, repeat=False)
+# aniVeTi = FuncAnimation(plt.gcf(), ani_ve_ti, frames=len(df), interval=1000, repeat=False)
+# aniAcTi = FuncAnimation(plt.gcf(), ani_ac_ti, frames=len(df), interval=1000, repeat=False)
 
+plt.show()
 
